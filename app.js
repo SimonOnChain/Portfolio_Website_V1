@@ -1,4 +1,4 @@
-const sections = document.querySelectorAll('.selection');
+const sections = document.querySelectorAll('.section');
 const sectButtons = document.querySelectorAll('.controls');
 const secBtn = document.querySelectorAll('.control');
 const allSelect = document.querySelector('.main-content');
@@ -18,24 +18,25 @@ function transition(){
     
      //Section active class  
     
-     allSelect.addEventListener("click", (item) => {
-        const id = item.target.dataset.id;
+     allSelect.addEventListener("click", (e) => {
+        const id = e.target.dataset.id;
 
-        if(id) {
+        if(id){
             sectButtons.forEach((btn) => {
-                btn.classList.remove("active")
-            });
-            
-            item.target.classList.add("active")
+                btn.classList.remove('active');
+            })
+            e.target.classList.add('active');
 
             sections.forEach((section) =>{
-                sections.classList.remove("active");
-            } )
+                section.classList.remove('active');
+            })
 
-            const element = document.getElementById(id)
-            element.classList.add("active")
+            const element = document.getElementById(id);
+            return element.classList.add('active');
+
+            
         }
-     });
+     })
         
 }
 
