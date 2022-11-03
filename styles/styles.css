@@ -74,6 +74,24 @@ section {
   transform: translateY(0) scale(1);
 }
 
+.sec2 {
+  display: none;
+  transform: translateY(0) scale(1);
+  background-color: slategrey;
+}
+
+.sec3 {
+  display: none;
+  transform: translateY(0) scale(1);
+  background-color: yellowgreen;
+}
+
+.sec4 {
+  display: none;
+  transform: translateY(0) scale(1);
+  background-color: orchid;
+}
+
 .controls {
   position: fixed;
   z-index: 10;
@@ -85,11 +103,11 @@ section {
   justify-content: center;
   transform: translateY(-50%);
 }
-.controls .acitve.btn {
+.controls .active-btn {
   background-color: var(--color-secondary) !important;
   transition: all 0.4s ease-in-out;
 }
-.controls .acitve.btn i {
+.controls .active-btn i {
   color: var(--color-white) !important;
 }
 .controls .control {
