@@ -37,9 +37,44 @@ function transition(){
             
         }
      })
-        
+     document.querySelector(".theme-btn").addEventListener("click", () => {
+        document.body.classList.toggle("light-mode");
+    })     
 }
 
 
 
 transition()
+
+
+const CountDown = () => {
+
+    const mintDate = new Date("December 31, 2022 00:00:00").getTime();
+    const currentDate = new Date().getTime();
+
+    const gap = mintDate - currentDate;
+    console.log(gap)
+  
+    const second = 1000;
+    const minute = second * 60;
+    const hour = minute * 60;
+    const day = hour * 24;
+
+    const newDay = Math.floor((gap/day));
+    const newHour = Math.floor((gap % day) / hour);
+    const newMinute = Math.floor((gap % hour) / minute);
+    const newSecond = Math.floor((gap % minute) / second);
+
+    document.querySelector(".day").innerHTML = newDay
+    document.querySelector(".hour").innerHTML = newHour
+    document.querySelector(".min").innerHTML = newMinute
+    document.querySelector(".sec"). innerHTML = newSecond;
+}
+
+setInterval(CountDown,1000);
+
+
+
+  
+
+
